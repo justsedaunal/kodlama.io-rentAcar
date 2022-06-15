@@ -3,8 +3,8 @@ export class Car {
   brandId:number
   colorId:number
   dailyPrice:number
-  description:String
-  brandName:String
-  colorName:String
+  description:string
+  brandName:string
+  colorName:string
 }
 
