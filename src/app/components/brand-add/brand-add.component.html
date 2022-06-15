@@ -1,0 +1,13 @@
+<h1>Brand New Add</h1>
+<form #brandAddForm="ngForm" (ngSubmit)="add(brandAddForm)">
+  <div class="form-group m-2">
+    <input type="text" placeholder="marka adı" #name="ngModel" [(ngModel)]="brand.name" class="form-control" name="name"
+      id="name" required />
+    <div class="alert alert-danger" *ngIf="name.invalid && name.dirty">
+      marka ismi gereklidir
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="brandAddForm.invalid">
+    Ekle
+  </button>
+</form>

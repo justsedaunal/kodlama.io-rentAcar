@@ -1,0 +1,34 @@
+rent a car 
+her gün pair programming þeklinde proje kodlamasý yapýlacak.her gün pairler deðiþecek
+------sýfýrdan api oluþtur.
+brand(marka)--->id,name,image(audinin logosu)
+
+imagelarý assettsin içine koy
+
+bootstrap kullan
+
+araba markasý leftsidebar with logo list
+**----------------------------------------------------------**
+
+markanýn yanýnda buton olcak güncelleye git ürün detayý olcak 
+sil butonu olsun emin misin diye alert versin
+
+
+**----------------------------------------------------------**
+
+renkleri menüde listele
+
+arabalarý listele
+
+araba modelini oluþtur(id,brandId,colorId,colorName,brandName,dailyPrice,description)
+
+markaya týklayýnca o arabalarý listele
+
+renge týklayýnca o renge ait arabalarý listele
+
+araba crud iþlemleri yap
+
+**-----------------------------------------------------------**
+
+
+ 

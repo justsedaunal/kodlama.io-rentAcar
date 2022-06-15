@@ -1,0 +1,224 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3535), pid=10112, tid=4228
+#
+# JRE version:  (17.0.3+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.3+7, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dsts.lsp.client=vscode -Dsts.log.file=/dev/null -XX:TieredStopAtLevel=1 -Dspring.config.location=file:c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\classes\application.properties org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+
+Host: Intel(R) Core(TM) i5-4200U CPU @ 1.60GHz, 4 cores, 7G,  Windows 8.1 , 64 bit Build 9600 (6.3.9600.20062)
+Time: Tue Jun 14 19:02:53 2022 Türkiye Standart Saati elapsed time: 0.019734 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000ccb5069c00):  JavaThread "Unknown thread" [_thread_in_vm, id=4228, stack(0x000000ccb4710000,0x000000ccb4810000)]
+
+Stack: [0x000000ccb4710000,0x000000ccb4810000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x675efa]
+V  [jvm.dll+0x830a24]
+V  [jvm.dll+0x8321ce]
+V  [jvm.dll+0x832833]
+V  [jvm.dll+0x2454b5]
+V  [jvm.dll+0x672de9]
+V  [jvm.dll+0x667732]
+V  [jvm.dll+0x3043ab]
+V  [jvm.dll+0x30b8f6]
+V  [jvm.dll+0x35b62e]
+V  [jvm.dll+0x35b85f]
+V  [jvm.dll+0x2db248]
+V  [jvm.dll+0x2dc1b4]
+V  [jvm.dll+0x802651]
+V  [jvm.dll+0x3693b1]
+V  [jvm.dll+0x7e1aac]
+V  [jvm.dll+0x3ebd8f]
+V  [jvm.dll+0x3ed911]
+C  [jli.dll+0x5277]
+C  [ucrtbase.DLL+0x1c1ae]
+C  [KERNEL32.DLL+0x1412]
+C  [ntdll.dll+0x154f4]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffab38f6e98, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000000ccb50c39d0 GCTaskThread "GC Thread#0" [stack: 0x000000ccb4d00000,0x000000ccb4e00000] [id=6900]
+  0x000000ccb50d58c0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000ccb4e00000,0x000000ccb4f00000] [id=6640]
+  0x000000ccb50d6970 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000ccb4f00000,0x000000ccb5000000] [id=12792]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffab30cbcd7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000000ccb5064dc0] Heap_lock - owner thread: 0x000000ccb5069c00
+
+Heap address: 0x0000000081c00000, size: 2020 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000081c00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffab34af249]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.006 Loaded shared library c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff606180000 - 0x00007ff60618e000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\java.exe
+0x00007ffadd9f0000 - 0x00007ffaddb9d000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffadb570000 - 0x00007ffadb6af000 	C:\Windows\system32\KERNEL32.DLL
+0x00007ffadaea0000 - 0x00007ffadafb5000 	C:\Windows\system32\KERNELBASE.dll
+0x00007ffad8850000 - 0x00007ffad8868000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\jli.dll
+0x00007ffad7c80000 - 0x00007ffad7c99000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\VCRUNTIME140.dll
+0x00007ffad8840000 - 0x00007ffad8844000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-stdio-l1-1-0.dll
+0x00007ffad87e0000 - 0x00007ffad87e4000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-runtime-l1-1-0.dll
+0x00007ffad8780000 - 0x00007ffad8783000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-environment-l1-1-0.dll
+0x00007ffad7cb0000 - 0x00007ffad7cb5000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-math-l1-1-0.dll
+0x00007ffad7450000 - 0x00007ffad7453000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-locale-l1-1-0.dll
+0x00007ffad6f60000 - 0x00007ffad6f63000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-heap-l1-1-0.dll
+0x00007ffad8c10000 - 0x00007ffad8e8b000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.19394_none_62486577ecb635cf\COMCTL32.dll
+0x00007ffadd150000 - 0x00007ffadd2c7000 	C:\Windows\system32\USER32.dll
+0x00007ffad6f20000 - 0x00007ffad6f23000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-filesystem-l1-1-0.dll
+0x00007ffad6f10000 - 0x00007ffad6f14000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-string-l1-1-0.dll
+0x00007ffad6f00000 - 0x00007ffad6f04000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-convert-l1-1-0.dll
+0x00007ffadb2e0000 - 0x00007ffadb38a000 	C:\Windows\system32\msvcrt.dll
+0x00007ffadb410000 - 0x00007ffadb55e000 	C:\Windows\system32\GDI32.dll
+0x00007ffaca300000 - 0x00007ffaca3fa000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\ucrtbase.DLL
+0x00007ffadd9b0000 - 0x00007ffadd9e6000 	C:\Windows\system32\IMM32.DLL
+0x00007ffadccc0000 - 0x00007ffadce11000 	C:\Windows\system32\MSCTF.dll
+0x00007ffad6cf0000 - 0x00007ffad6cfc000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\vcruntime140_1.dll
+0x00007ffaca260000 - 0x00007ffaca2f1000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\msvcp140.dll
+0x00007ffad4620000 - 0x00007ffad4623000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-time-l1-1-0.dll
+0x00007ffad4610000 - 0x00007ffad4613000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\api-ms-win-crt-utility-l1-1-0.dll
+0x00007ffab2de0000 - 0x00007ffab3a28000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\server\jvm.dll
+0x00007ffadd330000 - 0x00007ffadd3da000 	C:\Windows\system32\ADVAPI32.dll
+0x00007ffad18a0000 - 0x00007ffad18a9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffad8800000 - 0x00007ffad8822000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffad87c0000 - 0x00007ffad87ca000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffadb560000 - 0x00007ffadb567000 	C:\Windows\system32\PSAPI.DLL
+0x00007ffadd660000 - 0x00007ffadd6b8000 	C:\Windows\SYSTEM32\sechost.dll
+0x00007ffadce30000 - 0x00007ffadcf6a000 	C:\Windows\system32\RPCRT4.dll
+0x00007ffadb6d0000 - 0x00007ffadb72a000 	C:\Windows\system32\WS2_32.dll
+0x00007ffad8790000 - 0x00007ffad87ba000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffadae70000 - 0x00007ffadae9e000 	C:\Windows\system32\SspiCli.dll
+0x00007ffadce20000 - 0x00007ffadce29000 	C:\Windows\system32\NSI.dll
+0x00007ffadadc0000 - 0x00007ffadae0f000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x00007ffad9950000 - 0x00007ffad9978000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x00007ffad4460000 - 0x00007ffad446a000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\jimage.dll
+0x00007ffab9f40000 - 0x00007ffaba0c9000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffad3e10000 - 0x00007ffad3e35000 	c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.19394_none_62486577ecb635cf;c:\Users\Asus\.vscode\extensions\redhat.java-1.7.0-win32-x64\jre\17.0.3-win32-x86_64\bin\server
+
+VM Arguments:
+jvm_args: -Dsts.lsp.client=vscode -Dsts.log.file=/dev/null -XX:TieredStopAtLevel=1 -Dspring.config.location=file:c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\classes\application.properties 
+java_command: org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+java_class_path (initial): c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\classes;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\antlr4-runtime-4.5.3.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\byte-buddy-1.10.18.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\commons-codec-1.14.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\commons-io-2.4.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\commons-java-1.33.0-SNAPSHOT.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\commons-lang3-3.10.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\commons-language-server-1.33.0-SNAPSHOT.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\commons-lsp-extensions-1.33.0-SNAPSHOT.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\commons-util-1.33.0-SNAPSHOT.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\commons-yaml-1.33.0-SNAPSHOT.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\gson-2.8.6.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\guava-19.0.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\jakarta.annotation-api-1.3.5.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\jandex-2.0.5.Final.jar;c:\Users\Asus\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\lib\java-properties-1.33.0-SNAPSHOT.jar;c:\Users\A
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2118123520                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2118123520                             {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\jdk-17.0.1\bin;C:\Program Files\nodejs\;C:\Users\Asus\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;;C:\Users\Asus\AppData\Local\GitHubDesktop\bin;C:\Users\Asus\AppData\Roaming\npm
+USERNAME=Asus
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 8.1 , 64 bit Build 9600 (6.3.9600.20062)
+OS uptime: 1 days 8:46 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1 microcode 0x18, cx8, cmov, fxsr, ht, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, fma, vzeroupper, clflush
+
+Memory: 4k page, system-wide physical 8075M (1735M free)
+TotalPageFile size 11147M (AvailPageFile size 101M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 46M, peak: 174M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.3+7) for windows-amd64 JRE (17.0.3+7), built on Apr 19 2022 16:55:35 by "" with MS VC++ 16.7 (VS2019)
+
+END.

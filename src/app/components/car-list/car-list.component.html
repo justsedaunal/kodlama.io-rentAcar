@@ -1,0 +1,43 @@
+
+<button class="btn " routerLink="car-add" >
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+    class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+    <path
+      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+  </svg>
+  <h6>Add new car</h6>
+ </button>
+
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+
+      <th scope="col">id</th>
+      <th scope="col">brandId</th>
+      <th scope="col">colorId</th>
+      <th scope="col">dailyPrice</th>
+      <th scope="col">description</th>
+      <th scope="col">activation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars">
+      <th scope="row">1</th>
+      <td> {{car.id}} </td>
+      <td> {{car.brandId}} </td>
+      <td> {{car.colorId}} </td>
+      <td> {{car.dailyPrice}} </td>
+      <td> {{car.description}} </td>
+      <td>
+        <button routerLink="car-update" >edit</button>
+        <!-- <button (click)="deleteCarById(car.id)" >delete</button> -->
+      </td>
+    </tr>
+
+  </tbody>
+</table>
