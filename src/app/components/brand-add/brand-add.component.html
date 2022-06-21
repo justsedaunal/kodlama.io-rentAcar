@@ -1,8 +1,10 @@
-<h1>Brand New Add</h1>
+<h1>Add New Color</h1>
 <form #brandAddForm="ngForm" (ngSubmit)="add(brandAddForm)">
   <div class="form-group m-2">
-    <input type="text" placeholder="marka adı" #name="ngModel" [(ngModel)]="brand.name" class="form-control" name="name"
+    <input type="text" placeholder="brand name" #name="ngModel" [(ngModel)]="brand.name" class="form-control" name="name"
       id="name" required />
+    <input type="text" placeholder="image path" #name="ngModel" [(ngModel)]="brand.image" class="form-control" name="image"
+      id="image" required />
     <div class="alert alert-danger" *ngIf="name.invalid && name.dirty">
       marka ismi gereklidir
     </div>

@@ -1,0 +1,123 @@
+<!-- *-----******  personel informations start  *****------------- -->
+
+<div class="container-fluid px-1 py-5 mx-auto">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 text-center">
+      <h3>Check Reservation And Complete It</h3>
+      <!-- <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for you.</p> -->
+      <div class="card">
+        <h5 class="text-center mb-4">Personel Informations</h5>
+        <form class="form-card" onsubmit="event.preventDefault()">
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">First name<span
+                  class="text-danger"> *</span></label> <input type="text" id="fname" name="fname"
+                placeholder="Enter your first name" onblur="validate(1)"> </div>
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span
+                  class="text-danger"> *</span></label> <input type="text" id="lname" name="lname"
+                placeholder="Enter your last name" onblur="validate(2)"> </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-4 flex-column d-flex"> <label class="form-control-label px-3">Country Code
+                <span class="text-danger"> *</span></label>
+              <select class="form-control py-2 rounded">
+                <option value="+90">(+90) Türkiye</option>
+                <option value="+49" selected>(+49) Almanya</option>
+                <option value="+61">(+61) Avustralya</option>
+                <option value="+43">(+43) Avusturya</option>
+                <option value="+994">(+994) Azerbaycan</option>
+                <option value="+32">(+32) Belçika</option>
+                <option value="+55">(+55) Brezilya</option>
+                <option value="+359">(+359) Bulgaristan</option>
+              </select>
+            </div>
+            <div class="form-group col-sm-8 flex-column d-flex"> <label class="form-control-label px-3">Phone
+                Number<span class="text-danger"> *</span></label> <input type="text" id="lname" name="lname"
+                placeholder="Enter your last name" onblur="validate(2)"> </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Email<span
+                  class="text-danger"> *</span></label> <input type="text" id="email" name="email" placeholder=""
+                onblur="validate(3)"> </div>
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">National Id
+                Number <span class="text-danger"> *</span></label> <input type="text" id="job" name="job" placeholder=""
+                onblur="validate(5)"> </div>
+
+          </div>
+          <div class="row justify-content-between text-left">
+
+
+
+          </div>
+
+          <div _ngcontent-yei-c60="" class="form-group col-12 flex-column d-flex"><label _ngcontent-yei-c60=""
+              class="form-control-label px-3">Country <span _ngcontent-yei-c60="" class="text-danger">
+                *</span></label><select _ngcontent-yei-c60="" class="form-control py-2 rounded">
+              <option _ngcontent-yei-c60="" value="+90" ng-reflect-value="+90"> İstanbul</option>
+
+            </select></div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Address<span
+                  class="text-danger"> *</span></label>
+              <textarea type="text" id="ans" name="ans" placeholder="" onblur="validate(6)"> </textarea>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Request a
+                demo</button> </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- *-----******  personel informations end  *****------------- -->
+
+
+<!-- *-----******  bill informations start  *****------------- -->
+
+<div class="container-fluid px-1 py-5 mx-auto">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 text-center">
+      <!-- <h3>Check Reservation And Complete It</h3> -->
+      <!-- <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for you.</p> -->
+      <div class="card">
+        <h5 class="text-center mb-4">Bill Informations</h5>
+        <form class="form-card" onsubmit="event.preventDefault()">
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">First name<span
+                  class="text-danger"> *</span></label> <input type="text" id="fname" name="fname"
+                placeholder="Enter your first name" onblur="validate(1)"> </div>
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span
+                  class="text-danger"> *</span></label> <input type="text" id="lname" name="lname"
+                placeholder="Enter your last name" onblur="validate(2)"> </div>
+          </div>
+
+
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">National Id
+                Number <span class="text-danger"> *</span></label> <input type="text" id="job" name="job" placeholder=""
+                onblur="validate(5)"> </div>
+
+
+          </div>
+
+
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Address<span
+                  class="text-danger"> *</span></label>
+              <textarea type="text" id="ans" name="ans" placeholder="" onblur="validate(6)"> </textarea>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Request a
+                demo</button> </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- *-----******  bill informations end  *****------------- -->

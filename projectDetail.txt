@@ -30,5 +30,9 @@ araba crud iþlemleri yap
 
 **-----------------------------------------------------------**
 
+arabaralara kirala butonu koy.Gelen ekranda müþterinin seçebileceði ek hizmetleri
+listele.ek hizmetler : bebek koltuðu,scooter vs
+
+
 
  

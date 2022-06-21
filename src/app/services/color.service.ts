@@ -14,4 +14,22 @@ export class ColorService {
   getColors():Observable<Color[]> {
     return this.httpClient.get<Color[]>("http://localhost:3000/colors")
 
-  }}
+  }
+
+  getColorById(colorId:number):Observable<Color>{
+    return this.httpClient.get<Color>("http://localhost:3000/colors/"+colorId)
+  }
+
+  deleteColor(colorId:number) :Observable<Color>{
+    return this.httpClient.delete<Color>("http://localhost:3000/colors/"+colorId)
+  }
+
+  addColor(color: Color): Observable<Color> {
+    return this.httpClient.post<Color>('http://localhost:3000/colors', color);
+  }
+  updateColor(color:Color):Observable<Color>{
+    return this.httpClient.put<Color>("http://localhost:3000/colors/"+color.id,color)
+  }
+
+
+}

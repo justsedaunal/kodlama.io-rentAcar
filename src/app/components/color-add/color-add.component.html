@@ -1,0 +1,15 @@
+<h1>Add New Color</h1>
+<form #colorAddForm="ngForm" (ngSubmit)="add(colorAddForm)">
+  <div class="form-group m-2">
+    <input type="text" placeholder="color name" #colorName="ngModel" [(ngModel)]="color.colorName" class="form-control" name="name"
+      id="name" required />
+    <!-- <input type="text" placeholder="image path" #name="ngModel" [(ngModel)]="color.image" class="form-control" name="image"
+      id="image" required /> -->
+    <div class="alert alert-danger" *ngIf="colorName.invalid && colorName.dirty">
+      color name is nessecary
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="colorAddForm.invalid">
+    Ekle
+  </button>
+</form>

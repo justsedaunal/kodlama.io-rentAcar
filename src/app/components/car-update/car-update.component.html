@@ -1,40 +1,66 @@
-<h1>Araba Güncelle</h1>
-<form style="margin-top:50px ;" *ngIf="carUpdateForm" [formGroup]="carUpdateForm" (ngSubmit)="updateCar()">
+ <h1>Araba Güncelle</h1>
+ <div class="d-flex justify-content-between">
+  <h1>Araba Ekle</h1>
+  <button class="btn btn-info" routerLink="">go to car list </button>
+</div>
+<form style="margin-top:50px ;" [formGroup]="carUpdateForm" (ngSubmit)="updateCar()">
+
+  <label for="input" class="form-label" required>Brand</label>
+  <select class="form-control" required name="brandName" id="name" formControlName="brandId">
+    <!-- formControlName          -->
+    <option *ngFor="let brand of brands" [value]="brand.id">
+      {{brand.name}}
+    </option>
+  </select>
+  <label for="input" class="form-label" required>Color</label>
+  <select class="form-control" required name="colorName" id="colorName" formControlName="colorId">
+    <option *ngFor="let color of colors" [value]="color.id">
+      {{color.colorName}}
+    </option>
+  </select>
 
 
   <div class="form-group">
-    <input style="margin-top:15px ;" type="number" id="brandId" [(ngModel)]="car.brandId" formControlName="brandId"
-      class="form-control">
+    <label for="input" class="form-label" required>DailyPrice</label>
 
+    <input style="margin-top:15px ;" type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control"
+      placeholder="Günlük fiyat giriniz">
+    <div class="alert alert-danger"
+      *ngIf="carUpdateForm.get('dailyPrice').hasError('required') && carUpdateForm.get('dailyPrice').dirty"> Günlük fiyat
+      girmek zorunludur
+    </div>
   </div>
+
   <div class="form-group">
-    <input style="margin-top:15px ;" type="number" id="colorId" [(ngModel)]="car.colorId" formControlName="colorId"
-      class="form-control">
+    <label for="input" class="form-label" required>description</label>
 
+    <input style="margin-top:15px ;" type="text" id="description" formControlName="description" class="form-control"
+      placeholder="description  ">
+    <div class="alert alert-danger"
+      *ngIf="carUpdateForm.get('description').hasError('required') && carUpdateForm.get('description').dirty"> Günlük fiyat
+      girmek zorunludur
+    </div>
   </div>
+
   <div class="form-group">
-    <input style="margin-top:15px ;" type="number" id="dailyPrice" [(ngModel)]="car.dailyPrice"
-      formControlName="dailyPrice" class="form-control">
+    <label for="input" class="form-label" required>image</label>
 
+    <input style="margin-top:15px ;" type="text" id="image" formControlName="image" class="form-control"
+      placeholder="image  ">
+    <div class="alert alert-danger"
+      *ngIf="carUpdateForm.get('image').hasError('required') && carUpdateForm.get('image').dirty"> Günlük fiyat
+      girmek zorunludur
+    </div>
   </div>
-  <div class="form-group">
-    <input style="margin-top:15px ;" type="text" id="description" [(ngModel)]="car.description"
-      formControlName="description" class="form-control">
-
-  </div>
-  <!-- <div class="form-group">
-    <input style="margin-top:15px ;" type="text" id="colorName" [(ngModel)]="car.colorName" formControlName="colorName"
-      class="form-control">
-
-  </div> -->
 
 
-  <!-- <div class="form-group">
-    <input style="margin-top:15px ;" type="text" id="brandName" [(ngModel)]="car.brandName" formControlName="brandName"
-      class="form-control">
 
-  </div> -->
-  <button [disabled]="carUpdateForm.invalid" style="margin-top:15px ;" type="submit"
-    class="btn btn-primary">Ekle</button>
+
+
+  <button [disabled]="carUpdateForm.invalid" style="margin-top:15px ;" type="submit" class="btn btn-primary">Edit</button>
 
 </form>
+
+
+
+

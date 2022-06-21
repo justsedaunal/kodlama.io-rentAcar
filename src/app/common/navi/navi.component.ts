@@ -12,4 +12,10 @@ export class NaviComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logOut(){
+    localStorage.clear()
+    alert("logout is successfull!")
+    location.reload()
+  }
+
 }

@@ -1,0 +1,17 @@
+<form [formGroup]="colorUpdateForm" (ngSubmit)="update()" class="brand-update ml-auto">
+
+  <div class="form-group">
+    <input type="text" id="colorName" formControlName="colorName" class="form-control" placeholder="" class="mb-3" />
+    <div class="alert alert-danger" *ngIf="
+    colorUpdateForm.get('colorName').hasError('required') &&
+    colorUpdateForm.get('colorName').dirty
+      ">
+      ürün adı zorunludur
+    </div>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary" [disabled]="colorUpdateForm.invalid">
+      Güncelle
+    </button>
+  </div>
+</form>

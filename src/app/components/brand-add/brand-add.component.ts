@@ -19,6 +19,7 @@ export class BrandAddComponent implements OnInit {
   add(form: NgForm) {
     this.brandService.addBrand(this.brand).subscribe((data) => {
       alert(data.name + 'başarılıyla eklendi');
+      window.location.reload();
     });
   }
 

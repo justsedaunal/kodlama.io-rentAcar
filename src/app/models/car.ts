@@ -6,5 +6,6 @@ export class Car {
   description:string
   brandName:string
   colorName:string
+  image:string;
 }
 

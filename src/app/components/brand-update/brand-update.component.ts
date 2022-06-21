@@ -41,6 +41,7 @@ export class BrandUpdateComponent implements OnInit {
     if (this.brandUpdateForm.valid) {
       this.brandService.updateBrand(this.brandUpdateForm.value).subscribe(data => {
         alert(data.name + " başarılıyla güncellendi")
+        window.location.reload()
       })
 
     }

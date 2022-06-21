@@ -13,6 +13,7 @@ export class ColorListComponent implements OnInit {
 
   constructor(private colorService: ColorService) { }
 
+  colorId=0
   ngOnInit(): void {
     this.getColorName()
   }
@@ -21,6 +22,18 @@ export class ColorListComponent implements OnInit {
     this.colorService.getColors().subscribe(data => {
       this.colors = data;
     })
+
+  }
+
+  deleteColorById(colorId:number) {
+
+    if(confirm("Are you sure to delete ?")){
+      this.colorService.deleteColor(colorId).subscribe(response=>{
+        this.getColorName();
+        alert("Item has been deleted successfully!")
+      })
+
+    }
 
   }
 
