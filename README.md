@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # RentACar
+=======
+>>>>>>> 9cae10fd8cf63565eea51b0133bfa88c4fc91102
 rent a car 
 her gün pair programming şeklinde proje kodlaması yapılacak.her gün pairler değişecek
 ------sıfırdan api oluştur.
@@ -30,6 +33,7 @@ renge tıklayınca o renge ait arabaları listele
 araba crud işlemleri yap
 
 **-----------------------------------------------------------**
+<<<<<<< HEAD
 arabaralara kirala butonu koy.Gelen ekranda müşterinin seçebileceği ek hizmetleri
 listele.ek hizmetler : bebek koltuğu,scooter vs
 
@@ -116,3 +120,5 @@ git ve github ı mediumda anlat deadline : 3 temmuz midnight
 
 
  
+=======
+>>>>>>> 9cae10fd8cf63565eea51b0133bfa88c4fc91102
