@@ -1,3 +1,4 @@
+import { CartItems } from './../../models/cartItems';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdditionalService } from 'src/app/models/additionalService';
@@ -12,33 +13,38 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class AdditionalServicesComponent implements OnInit {
 
-  additionalServices:AdditionalService[]
-  selectedCarId:number
+  additionalServices: AdditionalService[]
+  selectedCarId: number
   cars: Car[]
-  constructor(private additionalService: AdditionalServiceService,private activatedRoute: ActivatedRoute,private carService: CarService) { }
+  addedAdditionalServices: AdditionalService[] = []
+
+
+  constructor(private additionalService: AdditionalServiceService, private activatedRoute: ActivatedRoute, private carService: CarService) { }
 
   ngOnInit(): void {
-   // this.getRentCarsById();
-   this.getAdditionalService()
-   this.getCarById()
+    // this.getRentCarsById();
+    this.getAdditionalService()
+    this.getCarById()
   }
 
-  getCarById(){
+  getCarById() {
     this.carService.getCars().subscribe(data => {
-      this.activatedRoute.params.subscribe(param=>
-        {
-          if (param["id"]) {
-            this.cars = data.filter((x=>x.id==param["id"]));
-          }
+      this.activatedRoute.params.subscribe(param => {
+        if (param["id"]) {
+          this.cars = data.filter((x => x.id == param["id"]));
+          this.selectedCarId = param["id"];
+          this.getAdditionalServiceItems()
+
+        }
 
 
-        })
+      })
 
     })
 
   }
 
-  getAdditionalService(){
+  getAdditionalService() {
     this.additionalService.getAdditionalServices().subscribe(data => {
       this.additionalServices = data;
     })
@@ -46,10 +52,43 @@ export class AdditionalServicesComponent implements OnInit {
   }
 
 
-  addToCart(additionalService:AdditionalService) {
-    this.additionalService.addToCart(additionalService);
-      //this.router.navigateByUrl(`/additional-services/${additionalService.id}`);
+
+
+
+  addToCart(additionalService: AdditionalService) {
+    console.log(this.selectedCarId)
+    this.additionalService.addToCart(additionalService, this.selectedCarId);
+    this.getAdditionalServiceItems()
+    //this.router.navigateByUrl(`/additional-services/${additionalService.id}`);
     // window.location.href= `/additional-services/${car.id}`//BUNU KULLANMA
+  }
+
+
+  getAdditionalServiceItems() {
+
+    this.addedAdditionalServices = CartItems.filter(item => item.car.id == this.selectedCarId)[0].additionalService
+  }
+
+  isAdded(additionalServiceId: number): boolean {
+    if (this.addedAdditionalServices != undefined) {
+      let additionalServiceList = this.addedAdditionalServices.filter(item => item.id == additionalServiceId)
+      if (additionalServiceList.length > 0) {
+        return true;
+      } else {
+        return false;
+
+      }
+
+
+    } else {
+      return false;
+    }
+
+  }
+
+  removeAdditionalService(additionalServiceId: number) {
+    this.additionalService.removeAdditionalService(this.selectedCarId, additionalServiceId)
+    this.getAdditionalServiceItems()
   }
 
 

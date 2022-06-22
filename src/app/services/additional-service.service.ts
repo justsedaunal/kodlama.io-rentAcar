@@ -11,29 +11,50 @@ import { CartItems } from '../models/cartItems';
 })
 export class AdditionalServiceService {
 
+
   constructor(private httpClient: HttpClient) { }
 
-  getAdditionalServices():Observable<AdditionalService[]>{
-   return this.httpClient.get<AdditionalService[]>("http://localhost:3000/additionalServices")
+  getAdditionalServices(): Observable<AdditionalService[]> {
+    return this.httpClient.get<AdditionalService[]>("http://localhost:3000/additionalServices")
   }
 
-  addToCart(additionalService:AdditionalService){
+  addToCart(additionalService: AdditionalService, carId: number) {
+    let cartItems = CartItems
 
-    let item = CartItems.find(c=>c.additionalService.id===additionalService.id);
-    console.log(additionalService.id)
-    if(item){
-      item.quantity+=1;
-    }else{
-      let cartItem = new CartItem();
-      cartItem.additionalService = additionalService;
-      cartItem.quantity =1;
-      CartItems.push(cartItem)
+    let cartItem = cartItems.filter(item => item.car.id == carId)[0]
+    console.log(cartItem)
+    let additionalServiceItems = cartItem.additionalService
+    if (additionalServiceItems == undefined) {
+      cartItem.additionalService = []
     }
+
+    cartItem.additionalService.push(additionalService)
+    let additionalTotalPrice = 0
+    cartItem.additionalService.forEach(item => {
+      additionalTotalPrice = additionalTotalPrice + item.price
+
+    })
+    cartItem.totalPrice = cartItem.car.dailyPrice + additionalTotalPrice
+
   }
 
-  getCarByAdditionalServiceId(val:number):Observable<Car>{
-    return this.httpClient.get<Car>("http://localhost:3000/additional-services/"+val)
+  getCarByAdditionalServiceId(val: number): Observable<Car> {
+    return this.httpClient.get<Car>("http://localhost:3000/additional-services/" + val)
   }
+
+  removeAdditionalService(carId: number, additionalServiceId: number) {
+    let cartItem = CartItems.filter(item => item.car.id == carId)[0]
+    cartItem.additionalService = cartItem.additionalService.filter(item => item.id != additionalServiceId)
+
+    let additionalTotalPrice = 0
+    cartItem.additionalService.forEach(item => {
+      additionalTotalPrice = additionalTotalPrice + item.price
+
+    })
+    cartItem.totalPrice = cartItem.car.dailyPrice + additionalTotalPrice
+
+  }
+
 
 
 }

@@ -3,8 +3,6 @@
 car update e bak düzgün çalışmıyo
 brandId colorId string olarak ekleniyo ona bak
 güncellemede brandname colorname güncellenmiyo
-ek hizmetler olmuyo
-sepet toplama
 adres ekleme
 
 <!-- *************/*/ -->
