@@ -52,6 +52,13 @@ export class CarUpdateComponent implements OnInit {
 
 
   updateCar() {
+    this.carUpdateForm.controls["brandId"].setValue(parseInt(this.carUpdateForm.value.brandId));
+    this.carUpdateForm.controls["colorId"].setValue(parseInt(this.carUpdateForm.value.colorId));
+
+
+    this.carUpdateForm.controls["brandName"].setValue(this.brands.filter(x => x.id == this.carUpdateForm.value.brandId)[0].name)
+    this.carUpdateForm.controls["colorName"].setValue(this.colors.filter(item => item.id == this.carUpdateForm.value.colorId)[0].colorName)
+   console.log(typeof this.colors.filter(item => item.colorName))
     if (this.carUpdateForm.valid) {
       this.carService.updateCar(this.carUpdateForm.value).subscribe(data => {
         alert(data + " başarılıyla güncellendi")

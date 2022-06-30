@@ -38,6 +38,9 @@ export class CarAddComponent implements OnInit {
     this.getColors();
   }
   addCar() {
+    this.carAddForm.controls["brandId"].setValue(parseInt(this.carAddForm.value.brandId));
+    this.carAddForm.controls["colorId"].setValue(parseInt(this.carAddForm.value.colorId));
+
 
     this.carAddForm.controls["brandName"].setValue(this.brands.filter(x => x.id == this.carAddForm.value.brandId)[0].name)
     this.carAddForm.controls["colorName"].setValue(this.colors.filter(item => item.id == this.carAddForm.value.colorId)[0].colorName)

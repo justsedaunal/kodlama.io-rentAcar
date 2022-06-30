@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-login',
@@ -16,11 +18,25 @@ export class LoginComponent implements OnInit {
   user: User
 
 
+
+
   constructor(private loginService: LoginService, private formBuilder: FormBuilder,
-    private router: Router, private activatedRoute: ActivatedRoute, private toastrService: ToastrService) {
+    private router: Router, private activatedRoute: ActivatedRoute, private toastrService: ToastrService
+    , public translate: TranslateService) {
+    // Register translation languages
+    translate.addLangs(['tr', 'en']);
+    // Set default language
+    translate.setDefaultLang('tr');
+
 
 
   }
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
+
+
 
   ngOnInit(): void {
     this.createLoginForm()
